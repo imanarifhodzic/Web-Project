@@ -1,0 +1,24 @@
+{
+  "Clients & Feedbacks": [
+    {
+      "name": "Luka Bartula",
+      "comment": "From the initial application to bringing our new companion home, the entire experience was filled with warmth and professionalism.",
+      "photo": "images/person_1.jpg"
+    },
+    {
+      "name": "Salih Rogo",
+      "comment": "The adoption center made our dreams come true! Our dog is not just a pet; he's a cherished member of our family. Never been happier!",
+      "photo": "images/person_4.jpg"
+    },
+    {
+      "name": "Mirna Ljiljic",
+      "comment": "We are over the moon with joy since bringing home our furry friend. The process is smooth, the staff went above and beyond to find us a perfect match.",
+      "photo": "images/mirna.webp"
+    },
+    {
+      "name": "Emina Peljto",
+      "comment": "The adoption center's commitment to finding forever homes for their dogs is evident in every step of the process. Our pup is a bundle of joy!",
+      "photo": "images/emina.jpeg"
+    }
+  ]
+}

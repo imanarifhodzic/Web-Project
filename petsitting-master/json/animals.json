@@ -1,0 +1,34 @@
+{
+  "pets": [
+    {
+      "name": "Nala",
+      "breed": "Pit Bull",
+      "photo": "images/pitbull-dog.jpg"
+    },
+    {
+      "name": "Lola",
+      "breed": "German Shepherd",
+      "photo": "images/german-shepherd.jpeg"
+    },
+    {
+      "name": "Brownie",
+      "breed": "English Bulldog",
+      "photo": "images/bulldog.jpeg"
+    },
+    {
+      "name": "Daisy",
+      "breed": "Boxer",
+      "photo": "images/boxer-dog.jpeg"
+    },
+    {
+      "name": "Doug",
+      "breed": "Beagle",
+      "photo": "images/beagle-dog.jpeg"
+    },
+    {
+      "name": "Oddie",
+      "breed": "Pug",
+      "photo": "images/pug-dog.jpeg"
+    }
+  ]
+}
