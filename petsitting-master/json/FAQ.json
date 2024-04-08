@@ -1,0 +1,19 @@
+{
+  "faqs": [
+    {
+      "question": "What is the adoption process like?",
+      "answer1": "The adoption process typically involves filling out an application, meeting with an adoption counselor, and sometimes a home visit. We want to ensure that our dogs find loving and suitable homes.",
+      "answer2": "As easy as it sounds, our Dog Adoption Center employee will help every step of the way if you find yourself having any issues."
+    },
+    {
+      "question": "Are the dogs up-to-date on vaccinations?",
+      "answer1": "Yes, all our dogs are up-to-date on vaccinations, and they are spayed or neutered before adoption to promote responsible pet ownership.",
+      "answer2": "Generally, all dogs at the adoption center receive up-to-date vaccinations as part of their comprehensive care plan."
+    },
+    {
+      "question": "Can I bring my current pets to meet a potential new dog?",
+      "answer1": "Absolutely! We encourage meet-and-greets with your existing pets to ensure compatibility and a smooth transition.",
+      "answer2": "It's often recommended to arrange a supervised meet-and-greet at the adoption center or a neutral location to assess the compatibility and interaction between the animals before making a final decision on adoption."
+    }
+  ]
+}
