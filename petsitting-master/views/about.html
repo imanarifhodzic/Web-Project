@@ -356,77 +356,7 @@
         </div>
       </div>
     </section>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Target the form by its ID
-  const form = document.getElementById('consultations');
-
-  // Listen for form submission
-  form.addEventListener('submit', function(event) {
-    // Prevent the form from submitting the traditional way
-    event.preventDefault();
-
-    // Initialize an object to store form data
-    let formData = {};
-
-    // Use FormData to capture the form data
-    new FormData(form).forEach((value, key) => {
-      formData[key] = value;
-    });
-
-    // Log the formData object to the console
-    console.log(formData);
-
-    // If you wish to see the data as a string
-    console.log(JSON.stringify(formData));
-
-    // Send the form data to the server
-    fetch('your-server-url-here', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  });
-});  </script>
-<script>
-
-</script>
-
-    
-
-    <!-- loader -->
-    <!-- <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#F96D00"
-        />
-      </svg>
-    </div> -->
+ 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
