@@ -10,6 +10,7 @@ class UserService {
     }
 
     public function add_user($payload) {
+        $payload['password'] = password_hash($payload['password'], PASSWORD_BCRYPT);
         return $this->user_dao->add_user($payload);
     }
 
@@ -22,6 +23,10 @@ class UserService {
     }
 
     public function get_users() {
-        return $this->user_dao->get_all_users();
+        return $this->user_dao->get_users();
+    }
+
+    public function get_user_by_email($email) {
+        return $this->user_dao->get_user_by_email($email);
     }
 }

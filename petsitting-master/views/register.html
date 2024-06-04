@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
     <script src="../js/rest_clients.js"></script>
     <script src="../js/constants.js"></script>
 
@@ -21,7 +25,11 @@
     <link rel="stylesheet" href="../css/spapp.css" />
     <link rel="stylesheet" href="../css/toastr.css" />
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css/sourcesanspro-font.css"
+    />
     <!-- Main Style Css -->
     <style>
       .site-content {
@@ -320,7 +328,7 @@
       }
     </style>
   </head>
-  <body class="site-content">
+  <body>
     <div class="page-content">
       <div class="form-container">
         <div class="form-left">
@@ -332,11 +340,24 @@
         <div class="form-right">
           <div class="tab">
             <div class="tab-inner">
-              <h3 style="padding: 40px">Log In</h3>
+              <h3 style="padding: 40px">Sign Up</h3>
             </div>
           </div>
-          <form id="login-form" class="form-detail" action="#" method="post">
+          <form id="signup-form" class="form-detail" action="#" method="post">
             <div class="tabcontent" id="sign-up">
+              <div class="form-row">
+                <label class="form-row-inner">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="input-text"
+                    required
+                  />
+                  <span class="label">Full Name</span>
+                  <span class="border"></span>
+                </label>
+              </div>
               <div class="form-row">
                 <label class="form-row-inner">
                   <input
@@ -367,15 +388,15 @@
                 <button
                   type="submit"
                   class="btn"
-                  onclick="window.location.hash = 'home'"
+                  onclick="window.location.hash='home'"
                 >
-                  Log In
+                  Sign Up
                 </button>
               </div>
               <div>
                 <p>
-                  Don't have an account?
-                  <a href="#signup"><strong>Click here!</strong></a>
+                  Already have an account?
+                  <a href="login.html"><strong>Click here!</strong></a>
                 </p>
               </div>
             </div>
@@ -401,16 +422,12 @@
     <script src="../js/main.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/toastr.js"></script>
-    <script src="../js/utils.js"></script>
+
     <script>
-      if (window.localStorage.getItem("user")) {
-        window.location.href = "../index1.html";
-      }
-      FormValidation.validate("#login-form", {}, function (data) {
+      FormValidation.validate("#signup-form", {}, function (data) {
         console.log("Data serialized to ", data);
-        RestClient.post("users/login", data, function (response) {
-          Utils.set_to_localstorage("user", response);
-          window.location = "../index1.html";
+        RestClient.post("users/add", data, function (response) {
+          window.location.href = "login.html"; // Redirect to login.html
         });
       });
     </script>

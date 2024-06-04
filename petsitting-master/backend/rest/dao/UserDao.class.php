@@ -31,7 +31,11 @@ class UserDao extends BaseDao {
         $entity['id'] = $id;
         $stmt->execute($entity);
     }
-    public function get_all_users() {
+    public function get_users() {
         return $this->query("SELECT * FROM users", []);
+    }
+
+    public function get_user_by_email($email) {
+        return $this->query_unique("SELECT * FROM users WHERE email = :email", ["email" => $email]);
     }
 }
