@@ -273,6 +273,7 @@
         <div class="row d-md-flex justify-content-end">
           <div class="col-md-12 col-lg-6 half p-3 py-5 pl-lg-5 ftco-animate">
             <h2 class="mb-4">Free Consultation</h2>
+            <h2 class="mb-4" style="display: none;">You need to be <a href="views/login.html">logged in</a> to leave a consultation</h2>
             <form action="#" class="appointment" id="consultations">
               <div class="row">
                 <div class="col-md-12">
@@ -390,5 +391,28 @@
       <script src="js/main.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/script.js"></script>
+
+      <script>
+        if(!localStorage.getItem('user')){
+          document.querySelector('form').style.display = 'none';
+          document.querySelector('h2').style.display = 'block';
+        }
+        else{
+          FormValidation.validate("#consultations", {}, function(data){
+      console.log("Data serialized to", data);
+
+      // Retrieve the user data from local storage and parse it
+      var user = JSON.parse(localStorage.getItem('user'));
+
+      // Add the user's ID to the data object
+      data.user_id = user.id;
+
+      RestClient.post("consultations/add", data, function(response){
+        console.log("Consultations added successfully", response);
+        toastr.success("Consultations added successfully");
+      });
+    });
+        }
+      </script>
   </body>
 </html>

@@ -103,7 +103,7 @@ Flight::route('POST /users/login', function(){
 
     ];
 
-    $token = JWT::encode($jwt_payload, JWT_SECRET, "HS256");
+    $token = JWT::encode($jwt_payload, Config::JWT_SECRET(), "HS256");
 
     Flight::json(
         array_merge($user, ['token' => $token])

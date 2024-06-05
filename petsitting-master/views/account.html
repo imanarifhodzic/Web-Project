@@ -1,26 +1,31 @@
 <script>
-  if (!user) {
+  if (!localStorage.getItem("user")) {
     window.location.href = "views/login.html";
+  } else {
+    var user = JSON.parse(localStorage.getItem("user"));
+    document.getElementById("content-wrapper").innerHTML = `
+      <div class="container d-flex justify-content-center align-items-center" style="padding: 20px">
+        <div class="card" style="padding: 20px">
+          <div class="user text-center">
+            <div class="mt-5 text-center">
+              <img src="images/blankuser.jpg" class="rounded-circle" width="80" />
+            </div>
+          </div>
+          <div class="mt-5 text-center">
+            <h4 class="mb-0">${user.name}</h4>
+            <span class="text-muted d-block mb-2">${user.username}</span>
+            <span class="text-muted d-block mb-2">${user.email}</span>
+          </div>
+          <button
+  class="btn btn-primary"
+  onclick="localStorage.removeItem('user'); window.location.href = 'views/login.html'"
+>
+  Logout
+</button>
+        </div>
+        
+      </div>
+    `;
   }
 </script>
-<div
-  class="container d-flex justify-content-center align-items-center"
-  style="padding: 20px"
->
-  <div id="card" style="padding: 20px">
-    <div class="user text-center">
-      <div class="mt-5 text-center">
-        <img src="images/emina.jpeg" class="rounded-circle" width="80" />
-      </div>
-    </div>
-
-    <div class="mt-5 text-center">
-      <h4 class="mb-0">Iman Arifhodžić</h4>
-      <span class="text-muted d-block mb-2">Los Angeles</span>
-      <span class="text-muted d-block mb-2">imancica</span>
-      <span class="text-muted d-block mb-2">iman.a@stu.ibu.edu.ba</span>
-
-      <button class="update-btn">Update</button>
-    </div>
-  </div>
-</div>
+<div id="content-wrapper"></div>
